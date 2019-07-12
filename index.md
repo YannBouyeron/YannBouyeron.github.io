@@ -115,13 +115,14 @@ Créer un fasta contenant un seul SeqRecord. Le fichier fasta serra enregistré 
 
     >>> mkfas(sr1)
 
-Créer un fasta multisequence contenant plusieurs SeqRecord. Le fichier fasta serra enregistré dans le path indiqué en argument:
-
-    >>> mkfas(sr1, sr2, path="myfasta.fas")
     
 Créer plusieurs fichiers fasta mono séquence:
     
-    >>> mkfasx(sr1, sr2)
+    >>> mkfas(sr1, sr2)
+
+Créer un fasta multisequence contenant plusieurs SeqRecord. Le fichier fasta serra enregistré dans le path indiqué en argument:
+
+    >>> mkfasx("myfasta.fas", sr1, sr2)
 
 
 
