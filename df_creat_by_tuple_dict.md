@@ -5,7 +5,7 @@
 	>>> df = pd.DataFrame(d)
 	
 	>>> df
-	        nom  prenom
-		0  Diatta  Robert
-		1    Sane    Jean
+	           nom     prenom
+	        0  Diatta  Robert
+	        1    Sane    Jean
 		2   Diouf  Albert
