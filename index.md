@@ -48,7 +48,7 @@
 
 ## Etudier des séquences biologiques
 
-[Créer des séquences et les suavegarder au format fasta](#creatseq)
+[Créer des séquences](#creatseq)
 
 [Créer des fichiers fasta](#creatfasta)
 
@@ -63,7 +63,7 @@
 
 [Sauvegarder un graphique](#savegraph)
 
-[Mise en page de pluisieurs graphiques: réaliser un subplot](#subplot)
+[Mise en page de plusieurs graphiques: réaliser un subplot](#subplot)
 
 
 
@@ -79,7 +79,7 @@ ________________________________________________________________________________
 
 <a name="creatseq"></a>
 
-##### Créer des séquences
+### Créer des séquences
 
 Le module genopy dépend de biopython, on peut créer des sequences sous deux types d'objets différents: les objets Seq et SeqRecord. 
 
@@ -91,7 +91,7 @@ Créer un objet Seq
     >>> s1
     Seq('ATTCGCTCGTAATAGATGGCTCTATATAGATAGGCGCATAGCATCGATGTAGCT...CGT')
     
-La fonction toSeq de genopy permet de créer plus facilement des objets Seq. Elle ajoute automaitquement le type.
+La fonction toSeq de genopy permet de créer plus facilement des objets Seq. Elle ajoute automatiquement le type.
  
     >>> s2 = toSeq("ATTCGCTCGTAATAGATGGCTCTATATAGATAGGCGAATAGCATCGATGTAGCTTACCCGT")
     >>> s2
@@ -109,12 +109,17 @@ Les objets SeqRecord contiennent davantage d'informations:
 
 <a name="creatfasta"></a>
 
-##### Sauvegarder un ou plusieurs SeqRecord dans un ou plusieurs fichiers fasta
+### Sauvegarder un ou plusieurs SeqRecord dans un ou plusieurs fichiers fasta
 
-Créer un fasta contenant un seul SeqRecord. Le fichier fasta serra enregistré dans le repertoire courant et portera le 
+Créer un fasta contenant un seul SeqRecord. Le fichier fasta serra enregistré dans le repertoire courant et portera le nom du SeqRecord avec l'extension .fas
+
     >>> mkfas(sr1)
+
+Créer un fasta multisequence contenant plusieurs SeqRecord. Le fichier fasta serra enregistré dans le path indiqué en argument:
+
+    >>> mkfas(sr1, sr2, path="myfasta.fas")
     
-    >>> mkfas(sr1, sr2)
+Créer plusieurs fichiers fasta mono séquence:
     
     >>> mkfasx(sr1, sr2)
 
