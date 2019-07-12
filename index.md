@@ -11,13 +11,17 @@
 
 [Faire un graphique "simple" avec une seule courbe](#simplegraph)
 
+[Faire un graphique avec plusieurs courbes]("multigraph")
+
 [Annoter un graphique](#annotegraph)
+
+[Réaliser un subplot](#subplot)
 
 
 
 
 ______________________________________________________________________________________________________________________________
-
+------------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -143,6 +147,8 @@ Le format par défaut est .png, mais il est possible de choisir un autre format 
 
 ![](https://gist.github.com/YannBouyeron/c0684bf235f2f2835369dffabf67d5c4/raw/IMG_1970.PNG)
 
+<a name="multigraph"></a>
+
 ## Un graphique avec plusieurs courbes.
 
 	import numpy as np
@@ -165,6 +171,8 @@ Le format par défaut est .png, mais il est possible de choisir un autre format 
 	plt.show()
 
 ![](https://gist.github.com/YannBouyeron/c0684bf235f2f2835369dffabf67d5c4/raw/IMG_1968.PNG)
+
+<a name="subplot"></a>
 
 ## Un subplot (plusieurs graphiques sur la même figure)
 
