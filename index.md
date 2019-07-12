@@ -22,7 +22,7 @@
 
 
 
-##### Utiliser un DataFrame (tableau 2D) avec Pandas
+#### Utiliser un DataFrame (tableau 2D) avec Pandas
 
 [Créer un DataFrame à partir d'un dictionnaire](#creatdfdico)
 
@@ -59,7 +59,7 @@
 
 [Faire un graphique avec plusieurs courbes](#multigraph)
 
-[Annoter un graphique](#annotegraph)
+[Légender un graphique](#annotegraph)
 
 [Sauvegarder un graphique](#savegraph)
 
