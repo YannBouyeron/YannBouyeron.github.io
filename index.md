@@ -2,6 +2,12 @@
 
 ## Exploiter une base de données
 
+[Importer une base de données au format SQL](#importsql)
+
+[Importer une base de données au format CSV](#importcsv)
+
+[Importer une base de données au format xlsx](#importxlsx)
+
 [Créer un DataFrame à partir d'un dictionnaire](#creatdf1)
 
 ## Etudier des séquences biologiques
@@ -11,11 +17,13 @@
 
 [Faire un graphique "simple" avec une seule courbe](#simplegraph)
 
-[Faire un graphique avec plusieurs courbes]("multigraph")
+[Faire un graphique avec plusieurs courbes](#multigraph)
 
 [Annoter un graphique](#annotegraph)
 
-[Réaliser un subplot](#subplot)
+[Sauvegarder un graphique](#savegraph)
+
+[Mise en page de pluisieurs graphiques: réaliser un subplot](#subplot)
 
 
 
@@ -23,6 +31,9 @@
 ______________________________________________________________________________________________________________________________
 ------------------------------------------------------------------------------------------------------------------------------
 
+
+______________________________________________________________________________________________________________________________
+------------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -112,6 +123,8 @@ Ou équivalent :
 	plt.show()
 
 Même après avoir affiché le graphique, l’objet plt est toujours actif, il est encore possible de modifier le graphique (y compris dans le shell), pour voir les modifications apportées, il faut ré afficher le graphique `plt.show()`
+
+<a name="savegraph"></a>
 
 #### Sauvegarder le graphique:
 
