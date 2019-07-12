@@ -10,16 +10,13 @@
 ## Faire un graphique
 
 [Faire un graphique "simple" avec une seule courbe](#simplegraph)
+
 [Annoter un graphique](#annotegraph)
 
 
 
 
-
-# .
-# .
-# .
-
+______________________________________________________________________________________________________________________________
 
 
 
