@@ -4,7 +4,7 @@
 
 ## Exploiter une base de données
 
-[Créer un DataFrame à partir d'un dictionnaire de tuples](#créer_un_dataframe_à_partir_d’un_dictionnaire_de_tuples)
+[Créer un DataFrame à partir d'un dictionnaire de tuples](#_abc)
 
 ## Etudier des séquences biologiques
 
@@ -18,7 +18,7 @@ hjhfdhfihfhzefhiezhfizhfeizhfizjehfizhfizhfeizhefzhifzueifhzifhihf hjhfdhfihfhze
 ## Faire un graphique
 
 
-#### Créer un DataFrame à partir d'un dictionnaire de tuples
+#### abc
 
 	>>> d = {"nom":("Diatta", "Sane", "Diouf"), "prenom":("Robert", "Jean", "Albert")}
 	
