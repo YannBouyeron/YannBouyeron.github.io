@@ -50,6 +50,8 @@
 
 [Créer des séquences et les suavegarder au format fasta](#creatseq)
 
+[Créer des fichiers fasta](#creatfasta)
+
 
 ## Faire un graphique
 
@@ -81,13 +83,15 @@ ________________________________________________________________________________
 
 Le module genopy dépend de biopython, on peut créer des sequences sous deux types d'objets différents: les objets Seq et SeqRecord. 
 
+Créer un objet Seq
+
     >>> from genopy import *
        
     >>> s1 = Seq("ATTCGCTCGTAATAGATGGCTCTATATAGATAGGCGCATAGCATCGATGTAGCTTAGCCGT") 
     >>> s1
     Seq('ATTCGCTCGTAATAGATGGCTCTATATAGATAGGCGCATAGCATCGATGTAGCT...CGT')
     
-La fonction toSeq de genopy permet de créer plus facilement des objets Seq. 
+La fonction toSeq de genopy permet de créer plus facilement des objets Seq. Elle ajoute automaitquement le type.
  
     >>> s2 = toSeq("ATTCGCTCGTAATAGATGGCTCTATATAGATAGGCGAATAGCATCGATGTAGCTTACCCGT")
     >>> s2
@@ -97,13 +101,22 @@ Les objets SeqRecord contiennent davantage d'informations:
 
     >>> sr1 = SeqRecord(s1, id="sequence1", name="sequence1", description="une sequence")
     >>> sr1
-    SeqRecord(seq=Seq('ATTCGCTCGTAATAGATGGCTCTATATAGATAGGCGCATAGCATCGATGTAGCT...CGT'), id='sequence1', name='sequence1',      description='une sequence', dbxrefs=[])
+    SeqRecord(seq=Seq('ATTCGCTCGTAATAGATGGCTCTATATAGATAGGCGCATAGCATCGATGTAGCT...CGT'), id='sequence1', name='sequence1',      description='une sequence', dbxrefs=[])
     
     >>> sr2 = SeqRecord(s2, id="sequence2", name="sequence2", description="une autre sequence")
     >>> sr2
-    SeqRecord(seq=Seq('ATTCGCTCGTAATAGATGGCTCTATATAGATAGGCGAATAGCATCGATGTAGCT...CGT', IUPACUnambiguousDNA()), id='sequence2', name='sequence2', description='une sequence', dbxrefs=[])
+    SeqRecord(seq=Seq('ATTCGCTCGTAATAGATGGCTCTATATAGATAGGCGAATAGCATCGATGTAGCT...CGT', IUPACUnambiguousDNA()), id='sequence2', name='sequence2', description='une sequence', dbxrefs=[])
 
+<a name="creatfasta"></a>
 
+##### Sauvegarder un ou plusieurs SeqRecord dans un ou plusieurs fichiers fasta
+
+Créer un fasta contenant un seul SeqRecord. Le fichier fasta serra enregistré dans le repertoire courant et portera le 
+    >>> mkfas(sr1)
+    
+    >>> mkfas(sr1, sr2)
+    
+    >>> mkfasx(sr1, sr2)
 
 
 
