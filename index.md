@@ -13,6 +13,10 @@
 
 [Faire un graphique "simple" avec une seule courbe](#simplegraph)
 
+#
+#
+#
+
 <a name="simplegraph"></a>
 ### Faire un graphique "simple" avec une seule courbe.
 
@@ -130,6 +134,9 @@ Le format par défaut est .png, mais il est possible de choisir un autre format 
 
 ![](https://gist.github.com/YannBouyeron/c0684bf235f2f2835369dffabf67d5c4/raw/IMG_1970.PNG)
 
+#
+#
+#
 
 <a name="creatdf1"></a>
 #### Créer un DataFrame à partir d'un dictionnaire
