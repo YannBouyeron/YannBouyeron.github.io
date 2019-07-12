@@ -48,6 +48,8 @@
 
 ## Etudier des séquences biologiques
 
+[Créer des séquences et les suavegarder au format fasta](#creatseq)
+
 
 ## Faire un graphique
 
@@ -70,6 +72,34 @@ ________________________________________________________________________________
 
 ______________________________________________________________________________________________________________________________
 ------------------------------------------------------------------------------------------------------------------------------
+
+# Génopy
+
+##### Créer des séquences
+
+Le module genopy dépend de biopython, on peut créer des sequences sous deux types d'objets différents: les objets Seq et SeqRecord. La fonction toSeq de genopy permet de créer plus facilement des objets Seq.
+    
+    >>> from genopy import *
+       
+    >>> s1 = Seq("ATTCGCTCGTAATAGATGGCTCTATATAGATAGGCGCATAGCATCGATGTAGCTTAGCCGT") 
+    >>> s1
+    Seq('ATTCGCTCGTAATAGATGGCTCTATATAGATAGGCGCATAGCATCGATGTAGCT...CGT')
+    
+    >>> s2 = toSeq("ATTCGCTCGTAATAGATGGCTCTATATAGATAGGCGAATAGCATCGATGTAGCTTACCCGT")
+    >>> s2
+    Seq('ATTCGCTCGTAATAGATGGCTCTATATAGATAGGCGAATAGCATCGATGTAGCT...CGT', IUPACUnambiguousDNA()) 
+    
+    >>> sr1 = SeqRecord(s1, id="sequence1", name="sequence1", description="une sequence")
+    >>> sr1
+    SeqRecord(seq=Seq('ATTCGCTCGTAATAGATGGCTCTATATAGATAGGCGCATAGCATCGATGTAGCT...CGT'), id='sequence1', name='sequence1',      description='une sequence', dbxrefs=[])
+    
+    >>> sr2 = SeqRecord(s2, id="sequence2", name="sequence2", description="une sequence")
+    >>> sr2
+    SeqRecord(seq=Seq('ATTCGCTCGTAATAGATGGCTCTATATAGATAGGCGAATAGCATCGATGTAGCT...CGT', IUPACUnambiguousDNA()), id='sequence2', name='sequence2', description='une sequence', dbxrefs=[])
+
+
+
+
 
 # Introduction à Pandas.
 
