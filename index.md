@@ -80,8 +80,6 @@
 
 [Les listes](https://gist.github.com/YannBouyeron/18aca47587fe3e153e1e630af7640674#listes)
 
-[La boucle for](https://gist.github.com/YannBouyeron/18aca47587fe3e153e1e630af7640674#for)
-
 [Les dictionnaires](https://gist.github.com/YannBouyeron/18aca47587fe3e153e1e630af7640674#dico)
 
 [Manipuler les chaines de caractères str](https://gist.github.com/YannBouyeron/18aca47587fe3e153e1e630af7640674#str)
