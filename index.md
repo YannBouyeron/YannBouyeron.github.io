@@ -52,6 +52,7 @@
 
 [Créer des fichiers fasta](#creatfasta)
 
+[Convertir des fichiers .edi (anagene) en fichiers fasta](#convedi)
 
 ## Faire un graphique
 
@@ -123,6 +124,46 @@ Créer plusieurs fichiers fasta mono séquence:
 Créer un fasta multisequence contenant plusieurs SeqRecord. Le fichier fasta serra enregistré dans le path indiqué en argument:
 
     >>> mkfasx("myfasta.fas", sr1, sr2)
+
+
+
+<a name="convedi"></a>
+
+### Convertir des fichiers anagène avec l'extension .edi en fichiers fasta
+
+On commence par importer les modules genopy et os:
+
+    >>> from genopy import *
+    >>> import os
+
+On liste les fichiers du repertoire dans lequel on se trouve (ou un autre repertoire si on indique son path en argument de listdir:
+
+    >>> ld = os.listdir()
+    >>> 
+    >>> ld
+    ['__pycache__', 'genes-Opsines.edi', 'emb.aln', 'comp.aln', 'primates.fas', 'allelesFamillechoree.edi', 'genopy.py', 'tyrfamille4.fas', 'globines-beta-vertebres.fas', 'comp.dnd', 'myfasta.fas']
+
+On remarque ici deux fichier en .edi
+On utilise une boucle for pour selectionner les fichiers .edi et les convertir en .fas grace à la fonction edi2fasta
+
+    >>> for i in ld:
+    ...     if i[len(i)-4:] == ".edi":
+    ...             edi2fasta(i, i[:len(i)-4]+".fas")
+    ... 
+    >>> 
+
+On liste à nouveau les fichiers du repertoire:
+
+    >>> os.listdir()
+    ['__pycache__', 'genes-Opsines.edi', 'allelesFamillechoree.fas', 'emb.aln', 'comp.aln', 'primates.fas', 'allelesFamillechoree.edi', 'genopy.py', 'genes-Opsines.fas', 'tyrfamille4.fas', 'globines-beta-vertebres.fas', 'comp.dnd', 'myfasta.fas']
+    
+Nos deux fichiers .edi sont toujours présents , mais ils ont été convertis en .fas
+
+
+
+
+
+
 
 
 
