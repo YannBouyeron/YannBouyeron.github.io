@@ -96,6 +96,10 @@
 
 [Introduction à Numpy](https://gist.github.com/YannBouyeron/784af9b808c2accb42de45d1ddbfab0b)
 
+[Utiliser le module json de python](https://gist.github.com/YannBouyeron/39fafc26b94dfc459589c8d9e82637b6)
+
+[Lire et ecrire un fichier avec python](https://gist.github.com/YannBouyeron/6d32a8ba6bd782106c02c08dfad54ca3)
+
 
 ______________________________________________________________________________________________________________________________
 ------------------------------------------------------------------------------------------------------------------------------
