@@ -1044,6 +1044,7 @@ On peut aussi passer l'URL du CSV en argument à la place de son path
 ## Utiliser des fichiers xlsx:
 
 <a name="creatxlsx"></a>
+<a name="setxlsx"></a>
 
 ##### Convertir un DataFrame en un fichier xlsx, puis l’inverse:
 
