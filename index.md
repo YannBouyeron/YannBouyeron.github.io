@@ -136,15 +136,15 @@ On commence par importer les modules genopy et os:
     >>> from genopy import *
     >>> import os
 
-On liste les fichiers du repertoire dans lequel on se trouve (ou un autre repertoire si on indique son path en argument de listdir:
+On liste les fichiers du repertoire dans lequel on se trouve (ou un autre repertoire si on indique son path en argument de listdir):
 
     >>> ld = os.listdir()
     >>> 
     >>> ld
     ['__pycache__', 'genes-Opsines.edi', 'emb.aln', 'comp.aln', 'primates.fas', 'allelesFamillechoree.edi', 'genopy.py', 'tyrfamille4.fas', 'globines-beta-vertebres.fas', 'comp.dnd', 'myfasta.fas']
 
-On remarque ici deux fichier en .edi
-On utilise une boucle for pour selectionner les fichiers .edi et les convertir en .fas grace à la fonction edi2fasta
+On remarque ici deux fichiers en .edi
+On utilise une boucle for pour selectionner les fichiers .edi et les convertir en .fas grace à la fonction edi2fasta. Cette fonction attend 2 arguments: edi2fasta(file_name.edi, file_name.fas):
 
     >>> for i in ld:
     ...     if i[len(i)-4:] == ".edi":
