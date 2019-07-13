@@ -219,7 +219,7 @@ On obtient une liste de SeqRecord correspondant à notre recherche.
     1 gene_opsine_verte
     2 gene_opsine_bleue
 
-On peut alors aficher la séquence du gène de l'opsine verte dont l'indice dans la liste est 1 avec la fonction 'show()':
+On peut alors afficher la séquence du gène de l'opsine verte dont l'indice dans la liste est 1 avec la fonction 'show()':
 
     >>> show(q[1])
 
