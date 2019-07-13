@@ -84,7 +84,7 @@
 
 [Manipuler les chaines de caractères str](https://gist.github.com/YannBouyeron/18aca47587fe3e153e1e630af7640674#str)
 
-
+[Les fonctions](https://gist.github.com/YannBouyeron/d11d025a5c1460f1a201fea08df36f78)
 
 
 ______________________________________________________________________________________________________________________________
