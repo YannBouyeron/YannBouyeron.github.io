@@ -66,6 +66,24 @@
 
 [Mise en page de plusieurs graphiques: réaliser un subplot](#subplot)
 
+## Tutoriel Python3
+
+[les variables](https://gist.github.com/YannBouyeron/18aca47587fe3e153e1e630af7640674#variable)
+
+[Les entrées et les sorties](https://gist.github.com/YannBouyeron/18aca47587fe3e153e1e630af7640674#intout)
+
+[Les booléens](https://gist.github.com/YannBouyeron/18aca47587fe3e153e1e630af7640674#bool)
+
+[Les structures conditionnelles if elif else](https://gist.github.com/YannBouyeron/18aca47587fe3e153e1e630af7640674#ifelse)
+
+[La boucle while](https://gist.github.com/YannBouyeron/18aca47587fe3e153e1e630af7640674#while)
+
+[Les listes](https://gist.github.com/YannBouyeron/18aca47587fe3e153e1e630af7640674#listes)
+
+[Les dictionnaires](https://gist.github.com/YannBouyeron/18aca47587fe3e153e1e630af7640674#dico)
+
+[Manipuler les chaines de caractères str](https://gist.github.com/YannBouyeron/18aca47587fe3e153e1e630af7640674#str)
+
 
 
 
