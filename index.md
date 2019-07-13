@@ -68,7 +68,7 @@
 
 ## Tutoriel Python3
 
-[les variables](https://gist.github.com/YannBouyeron/18aca47587fe3e153e1e630af7640674#variable)
+[Les variables](https://gist.github.com/YannBouyeron/18aca47587fe3e153e1e630af7640674#variable)
 
 [Les entrées et les sorties](https://gist.github.com/YannBouyeron/18aca47587fe3e153e1e630af7640674#intout)
 
@@ -79,6 +79,8 @@
 [La boucle while](https://gist.github.com/YannBouyeron/18aca47587fe3e153e1e630af7640674#while)
 
 [Les listes](https://gist.github.com/YannBouyeron/18aca47587fe3e153e1e630af7640674#listes)
+
+[La boucle for](https://gist.github.com/YannBouyeron/18aca47587fe3e153e1e630af7640674#for)
 
 [Les dictionnaires](https://gist.github.com/YannBouyeron/18aca47587fe3e153e1e630af7640674#dico)
 
