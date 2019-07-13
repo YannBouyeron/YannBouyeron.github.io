@@ -56,6 +56,12 @@
 
 [Rechercher et afficher des séquences](#openseq)
 
+[Transcrire](#transc)
+
+[Traduire](#transl)
+
+[Rétro-Transcrire](#rt)
+
 ## Faire un graphique
 
 [Faire un graphique "simple" avec une seule courbe](#simplegraph)
@@ -251,6 +257,62 @@ On peut alors afficher la séquence du gène de l'opsine verte dont l'indice dan
 
 
 (la séquence n'est pas représentée entierement dans ce tutoriel)
+
+
+
+### Transcrire, Traduire, Rétro-transcrire
+
+<a name="transc"></a>
+
+    >>> dna = q[0]
+    >>> 
+    >>> dna
+    SeqRecord(seq=Seq('ATGGCCCAGCAGTGGAGCCTCCAAAGGCTCGCAGGCCGCCATCCGCAGGACAGC...TGA', SingleLetterAlphabet()), id='gene_opsine_rouge', name='gene_opsine_rouge', description='gene_opsine_rouge red opsin Homo sapiens opsin 1 (cone pigments), mRNA', dbxrefs=[])
+
+
+    >>> rna = transcribe(dna)
+    >>> rna
+    SeqRecord(seq=Seq('AUGGCCCAGCAGUGGAGCCUCCAAAGGCUCGCAGGCCGCCAUCCGCAGGACAGC...UGA', RNAAlphabet()), id='gene_opsine_rouge.rna', name='gene_opsine_rouge.rna', description='transcription de [gene_opsine_rouge red opsin Homo sapiens opsin 1 (cone pigments), mRNA]', dbxrefs=[])
+
+
+<a name="transl"></a>
+
+    >>> help(translate)
+    Help on function translate in module genopy:
+
+    translate(*seq, table_id=1, to_stop=True, stop_symbol=' ', cds=True, out=False)
+    Traduction d'un ou plusieurs dna ou rna SeqRecord. Si out == True, chaque proteine est sauvegardée dans un fasta. Return proteine SeqRecord ou une liste de proteines SeqRecord
+
+     
+    >>> pep = translate(rna)
+    >>> pep
+    SeqRecord(seq=Seq('MAQQWSLQRLAGRHPQDSYEDSTQSSIFTYTNSNSTRGPFEGPNYHIAPRWVYH...SPA', ExtendedIUPACProtein()), id='gene_opsine_rouge.rna.prot', name='gene_opsine_rouge.rna.prot', description='traduction de [transcription de [gene_opsine_rouge red opsin Homo sapiens opsin 1 (cone pigments), mRNA]]', dbxrefs=[])
+
+    >>> show(pep)
+
+
+          MetAlaGlnGlnTrpSerLeuGlnArgLeuAlaGlyArgHisProGlnAspSerTyrGluAspSerThrGlnSerSerIlePheThrTyr
+           -  -  -  -  :  -  -  -  -  |  -  -  -  -  :  -  -  -  -  |  -  -  -  -  :  -  -  -  -  | 
+                                      10                            20                            30
+
+          ThrAsnSerAsnSerThrArgGlyProPheGluGlyProAsnTyrHisIleAlaProArgTrpValTyrHisLeuThrSerValTrpMet
+           -  -  -  -  :  -  -  -  -  |  -  -  -  -  :  -  -  -  -  |  -  -  -  -  :  -  -  -  -  | 
+                                      40                            50                            60
+
+          IlePheValValThrAlaSerValPheThrAsnGlyLeuValLeuAlaAlaThrMetLysPheLysLysLeuArgHisProLeuAsnTrp
+           -  -  -  -  :  -  -  -  -  |  -  -  -  -  :  -  -  -  -  |  -  -  -  -  :  -  -  -  -  | 
+                                      70                            80                            90
+
+          IleLeuValAsnLeuAlaValAlaAspLeuAlaGluThrValIleAlaSerThrIleSerIleValAsnGlnValSerGlyTyrPheVal
+           -  -  -  -  :  -  -  -  -  |  -  -  -  -  :  -  -  -  -  |  -  -  -  -  :  -  -  -  -  | 
+                                      100                           110                           120
+
+          LeuGlyHisProMetCysValLeuGluGlyTyrThrValSerLeuCysGlyIleThrGlyLeuTrpSerLeuAlaIleIleSerTrpGlu
+           -  -  -  -  :  -  -  -  -  |  -  -  -  -  :  -  -  -  -  |  -  -  -  -  :  -  -  -  -  | 
+                                      130                  
+
+
+
 
 
 # Introduction à Pandas.
