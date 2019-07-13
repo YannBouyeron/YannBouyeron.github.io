@@ -86,7 +86,15 @@
 
 [Les fonctions](https://gist.github.com/YannBouyeron/d11d025a5c1460f1a201fea08df36f78)
 
+## Python compléments
+
 [Utiliser le module time de python](https://gist.github.com/YannBouyeron/1083709633f78e6804602a7ac6ae4bfa)
+
+[Les modules os, glob, shutil et subprocess](https://gist.github.com/YannBouyeron/941817d79b83a4b87c5a63580229cbbd)
+
+[Les listes en compréhension](https://gist.github.com/YannBouyeron/4ebc800d28e1d035025faf5811812a01)
+
+[Introduction à Numpy](https://gist.github.com/YannBouyeron/784af9b808c2accb42de45d1ddbfab0b)
 
 
 ______________________________________________________________________________________________________________________________
