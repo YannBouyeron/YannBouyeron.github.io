@@ -54,6 +54,8 @@
 
 [Convertir des fichiers .edi (anagene) en fichiers fasta](#convedi)
 
+[Rechercher et afficher des séquences](#openseq)
+
 ## Faire un graphique
 
 [Faire un graphique "simple" avec une seule courbe](#simplegraph)
@@ -109,6 +111,8 @@ ________________________________________________________________________________
 ------------------------------------------------------------------------------------------------------------------------------
 
 # Génopy
+
+### Installation
 
 <a name="creatseq"></a>
 
@@ -187,16 +191,66 @@ On utilise une boucle for pour selectionner les fichiers .edi et les convertir e
 On liste à nouveau les fichiers du repertoire:
 
     >>> os.listdir()
-    ['__pycache__', 'genes-Opsines.edi', 'allelesFamillechoree.fas', 'emb.aln', 'comp.aln', 'primates.fas', 'allelesFamillechoree.edi', 'genopy.py', 'genes-Opsines.fas', 'tyrfamille4.fas', 'globines-beta-vertebres.fas', 'comp.dnd', 'myfasta.fas']
+    ['__pycache__', 'genes-Opsines.edi', 'allelesFamillechoree.fas', 'emb.aln', 'comp.aln', 'primates.fas', 'allelesFamillechoree.edi', 'genopy.py', 'genes-Opsines.fas', 'tyrfamille4.fas', 'globines-beta-vertebres.fas', 'comp.dnd', 'myfasta.fas']
     
-Nos deux fichiers .edi sont toujours présents , mais ils ont été convertis en .fas
+
+<a name="openseq"></a>
+
+### Ouvrir des séquences
+
+Les séquences doivent être hébergées localement.
+
+On commence par rechercher les séquences avec la fonction 'search()' :
+
+    >>> q = search("Opsine")
+    >>> 
+    >>> q
+    [SeqRecord(seq=Seq('ATGGCCCAGCAGTGGAGCCTCCAAAGGCTCGCAGGCCGCCATCCGCAGGACAGC...TGA', SingleLetterAlphabet()), id='gene_opsine_rouge', name='gene_opsine_rouge', description='gene_opsine_rouge red opsin Homo sapiens opsin 1 (cone pigments), mRNA', dbxrefs=[]), SeqRecord(seq=Seq('ATGGCCCAGCAGTGGAGCCTCCAAAGGCTCGCAGGCCGCCATCCGCAGGACAGC...TGA', SingleLetterAlphabet()), id='gene_opsine_verte', name='gene_opsine_verte', description='gene_opsine_verte red opsin Homo sapiens opsin 1 (cone pigments), mRNA', dbxrefs=[]), SeqRecord(seq=Seq('ATGAGAAAAATGTCGGAGGAAGAGTTTTATCTGTTCAAAAATATCTCTTCAGTG...TGA', SingleLetterAlphabet()), id='gene_opsine_bleue', name='gene_opsine_bleue', description='gene_opsine_bleue Blue opsin Homo sapiens opsin 1 (cone pigments), mRNA', dbxrefs=[])]
+
+On obtient une liste de SeqRecord correspondant à notre recherche.
+
+    >>> len(q)
+    3
+    >>> 
+    >>> for i, j in enumerate(q):
+    ...     print(str(i) + " " + j.name)
+    ... 
+    0 gene_opsine_rouge
+    1 gene_opsine_verte
+    2 gene_opsine_bleue
+
+On peut alors aficher la séquence du gène de l'opsine verte dont l'indice dans la liste est 1 avec la fonction 'show()':
+
+    >>> show(q[1])
+
+
+          ATGGCCCAGCAGTGGAGCCTCCAAAGGCTCGCAGGCCGCCATCCGCAGGACAGCTATGAG
+          ----:----|----:----|----:----|----:----|----:----|----:----|
+                   10        20        30        40        50        60
+
+          GACAGCACCCAGTCCAGCATCTTCACCTACACCAACAGCAACTCCACCAGAGGCCCCTTC
+          ----:----|----:----|----:----|----:----|----:----|----:----|
+                   70        80        90        100       110       120
+
+          GAAGGCCCGAATTACCACATCGCTCCCAGATGGGTGTACCACCTCACCAGTGTCTGGATG
+          ----:----|----:----|----:----|----:----|----:----|----:----|
+                   130       140       150       160       170       180
+
+          ATCTTTGTGGTCATTGCATCCGTTTTCACAAATGGGCTTGTGCTGGCGGCCACCATGAAG
+          ----:----|----:----|----:----|----:----|----:----|----:----|
+                   190       200       210       220       230       240
+
+          TTCAAGAAGCTGCGCCACCCGCTGAACTGGATCCTGGTGAACCTGGCGGTCGCTGACCTG
+          ----:----|----:----|----:----|----:----|----:----|----:----|
+                   250       260       270       280       290       300
+
+          GCAGAGACCGTCATCGCCAGCACTATCAGCGTTGTGAACCAGGTCTATGGCTACTTCGTG
+          ----:----|----:----|----:----|----:----|----:----|----:----|
+                   310       320       330       340       350       360
 
 
 
-
-
-
-
+(la séquence n'est pas représentée entierement dans ce tutoriel)
 
 
 # Introduction à Pandas.
