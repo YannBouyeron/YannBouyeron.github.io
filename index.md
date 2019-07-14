@@ -221,7 +221,7 @@ On commence par rechercher les séquences avec la fonction 'search()' :
     >>> q = search("Opsine")
     >>> 
     >>> q
-    [SeqRecord(seq=Seq('ATGGCCCAGCAGTGGAGCCTCCAAAGGCTCGCAGGCCGCCATCCGCAGGACAGC...TGA', SingleLetterAlphabet()), id='gene_opsine_rouge', name='gene_opsine_rouge', description='gene_opsine_rouge red opsin Homo sapiens opsin 1 (cone pigments), mRNA', dbxrefs=[]), SeqRecord(seq=Seq('ATGGCCCAGCAGTGGAGCCTCCAAAGGCTCGCAGGCCGCCATCCGCAGGACAGC...TGA', SingleLetterAlphabet()), id='gene_opsine_verte', name='gene_opsine_verte', description='gene_opsine_verte red opsin Homo sapiens opsin 1 (cone pigments), mRNA', dbxrefs=[]), SeqRecord(seq=Seq('ATGAGAAAAATGTCGGAGGAAGAGTTTTATCTGTTCAAAAATATCTCTTCAGTG...TGA', SingleLetterAlphabet()), id='gene_opsine_bleue', name='gene_opsine_bleue', description='gene_opsine_bleue Blue opsin Homo sapiens opsin 1 (cone pigments), mRNA', dbxrefs=[])]
+    [SeqRecord(seq=Seq('ATGGCCCAGCAGTGGAGCCTCCAAAGGCTCGCAGGCCGCCATCCGCAGGACAGC...TGA', SingleLetterAlphabet()), id='gene_opsine_rouge', name='gene_opsine_rouge', description='gene_opsine_rouge red opsin Homo sapiens opsin 1 (cone pigments), mRNA', dbxrefs=[]), SeqRecord(seq=Seq('ATGGCCCAGCAGTGGAGCCTCCAAAGGCTCGCAGGCCGCCATCCGCAGGACAGC...TGA', SingleLetterAlphabet()), id='gene_opsine_verte', name='gene_opsine_verte', description='gene_opsine_verte red opsin Homo sapiens opsin 1 (cone pigments), mRNA', dbxrefs=[]), SeqRecord(seq=Seq('ATGAGAAAAATGTCGGAGGAAGAGTTTTATCTGTTCAAAAATATCTCTTCAGTG...TGA', SingleLetterAlphabet()), id='gene_opsine_bleue', name='gene_opsine_bleue', description='gene_opsine_bleue Blue opsin Homo sapiens opsin 1 (cone pigments), mRNA', dbxrefs=[])]
 
 On obtient une liste de SeqRecord correspondant à notre recherche.
 
@@ -643,7 +643,7 @@ Il est aussi possible de faire un affichage de l'alignement au format anagene av
 
 <a name="matrix"></a>
 
-Affichage de la matrice de distance:
+#### Afficher une matrice de distances:
 
 La fonction matrix attend un alignement (needle, water ou clustal) en argument obligatoire:
 
@@ -660,9 +660,9 @@ La matrice peut être convertie en table HTML et déployée sur [IPFS](https://g
     >>> matrix2ipfs(m)
     'QmcMhGpqsiCoyoPmbUf4xuX7ayMNiVHEkU44t4XMyWm2AK'
 
-On obtient le hash du fichier HTML, consultable sur votre noeud ipfs ou via ipfs.io: https://http://ipfs.io/ipfs/<hash>:
+On obtient le hash du fichier HTML, consultable sur votre noeud ipfs ou via ipfs.io: https://ipfs.io/ipfs/<hash>:
 	
-	https://http://ipfs.io/ipfs/QmcMhGpqsiCoyoPmbUf4xuX7ayMNiVHEkU44t4XMyWm2AK
+	https://ipfs.io/ipfs/QmcMhGpqsiCoyoPmbUf4xuX7ayMNiVHEkU44t4XMyWm2AK
 
 La matrice peut aussi être sauvegardée sous forme d'image png qui serra enregistrée localement:
 
