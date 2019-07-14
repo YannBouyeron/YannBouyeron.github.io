@@ -285,11 +285,15 @@ On peut alors afficher la séquence du gène de l'opsine verte dont l'indice dan
 
     translate(*seq, table_id=1, to_stop=True, stop_symbol=' ', cds=True, out=False)
     Traduction d'un ou plusieurs dna ou rna SeqRecord. Si out == True, chaque proteine est sauvegardée dans un fasta. Return proteine SeqRecord ou une liste de proteines SeqRecord
+ 
+ORF: open reading frame ou phase ouverte de lecture, c'est la séquence du brin non transcrit (brin codant) de l'adn (ou de l'arn pré-messager) située entre le premier codon initiateur jusqu'au premier codon stop 
 
-     
+CDS: coding sequence ou séquence codante, c'est l'ORF sans les introns
+
+
     >>> pep = translate(rna)
     >>> pep
-    SeqRecord(seq=Seq('MAQQWSLQRLAGRHPQDSYEDSTQSSIFTYTNSNSTRGPFEGPNYHIAPRWVYH...SPA', ExtendedIUPACProtein()), id='gene_opsine_rouge.rna.prot', name='gene_opsine_rouge.rna.prot', description='traduction de [transcription de [gene_opsine_rouge red opsin Homo sapiens opsin 1 (cone pigments), mRNA]]', dbxrefs=[])
+    SeqRecord(seq=Seq('MAQQWSLQRLAGRHPQDSYEDSTQSSIFTYTNSNSTRGPFEGPNYHIAPRWVYH...SPA', ExtendedIUPACProtein()), id='gene_opsine_rouge.rna.prot', name='gene_opsine_rouge.rna.prot', description='traduction de [transcription de [gene_opsine_rouge red opsin Homo sapiens opsin 1 (cone pigments), mRNA]]', dbxrefs=[])
 
     >>> show(pep)
 
