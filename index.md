@@ -269,6 +269,7 @@ On peut alors afficher la séquence du gène de l'opsine verte dont l'indice dan
     >>> dna
     SeqRecord(seq=Seq('ATGGCCCAGCAGTGGAGCCTCCAAAGGCTCGCAGGCCGCCATCCGCAGGACAGC...TGA', SingleLetterAlphabet()), id='gene_opsine_rouge', name='gene_opsine_rouge', description='gene_opsine_rouge red opsin Homo sapiens opsin 1 (cone pigments), mRNA', dbxrefs=[])
 
+#### Transcrire
 
     >>> rna = transcribe(dna)
     >>> rna
@@ -276,6 +277,8 @@ On peut alors afficher la séquence du gène de l'opsine verte dont l'indice dan
 
 
 <a name="transl"></a>
+
+#### Traduire
 
     >>> help(translate)
     Help on function translate in module genopy:
@@ -311,6 +314,26 @@ On peut alors afficher la séquence du gène de l'opsine verte dont l'indice dan
            -  -  -  -  :  -  -  -  -  |  -  -  -  -  :  -  -  -  -  |  -  -  -  -  :  -  -  -  -  | 
                                       130                  
 
+<a name="rt"></a>
+
+#### Rétro transcrire
+
+    >>> rna
+    SeqRecord(seq=Seq('AUGGCCCAGCAGUGGAGCCUCCAAAGGCUCGCAGGCCGCCAUCCGCAGGACAGC...UGA', RNAAlphabet()), id='gene_opsine_rouge.rna', name='gene_opsine_rouge.rna', description='transcription de [gene_opsine_rouge red opsin Homo sapiens opsin 1 (cone pigments), mRNA]', dbxrefs=[])
+    
+    >>> help(retro_transcribe)
+    Help on function retro_transcribe in module genopy:
+
+    retro_transcribe(*seq, out=False)
+    Retro transcription d'un ou plusieurs rna SeqRecord. Si out == True, chaque dna est sauvegardé dans un fasta. Return dna SeqRecord ou une liste de dna SeqRecord
+
+
+    >>> dna_c = retro_transcribe(rna)
+    >>> dna_c
+    SeqRecord(seq=Seq('ATGGCCCAGCAGTGGAGCCTCCAAAGGCTCGCAGGCCGCCATCCGCAGGACAGC...TGA', DNAAlphabet()), id='gene_opsine_rouge.rna.dnac', name='gene_opsine_rouge.rna.dnac', description='retro transcription de [transcription de [gene_opsine_rouge red opsin Homo sapiens opsin 1 (cone pigments), mRNA]]', dbxrefs=[])
+    >>> 
+    >>> dna.seq == dna_c.seq
+    True
 
 
 
