@@ -46,7 +46,7 @@
 
 [Supprimer des lignes](#delraw)
 
-## Etudier des séquences biologiques
+## Etudier des séquences biologiques avec [Genopy](https://gist.github.com/YannBouyeron/3eb3aa7a79fadb3350096dec0bb5b004)
 
 [Créer des séquences](#creatseq)
 
@@ -74,6 +74,8 @@
 
 ## Faire un graphique
 
+#### Avec matplotlib.pyplot
+
 [Faire un graphique "simple" avec une seule courbe](#simplegraph)
 
 [Faire un graphique avec plusieurs courbes](#multigraph)
@@ -83,6 +85,10 @@
 [Sauvegarder un graphique](#savegraph)
 
 [Mise en page de plusieurs graphiques: réaliser un subplot](#subplot)
+
+#### Avec Pandas
+
+...
 
 ## Tutoriel Python3
 
