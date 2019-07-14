@@ -62,7 +62,7 @@
 
 [Rétro-Transcrire](#rt)
 
-[Comparer des séquences: alignement par paires](#needlwater)
+[Comparer des séquences: alignement par paires](#needlewater)
 
 ## Faire un graphique
 
@@ -389,7 +389,7 @@ Dans les 2 cas on peut eventuellement modifier les pénalités pour les ouvertur
     <<class 'Bio.Align.MultipleSeqAlignment'> instance (2 records of length 361, SingleLetterAlphabet()) at 7061def0>
 
 
-On obtient des objet "align" que l'on peut alors exploiter de différentes façons:
+On obtient des objets "align" que l'on peut alors exploiter de différentes façons:
 
 Obtenir des informations de base sur l'alignement:
 
