@@ -62,6 +62,8 @@
 
 [Rétro-Transcrire](#rt)
 
+[Comparer des séquences: alignement par paires](#needlwater)
+
 ## Faire un graphique
 
 [Faire un graphique "simple" avec une seule courbe](#simplegraph)
@@ -329,16 +331,196 @@ CDS: coding sequence ou séquence codante, c'est l'ORF sans les introns
     Help on function retro_transcribe in module genopy:
 
     retro_transcribe(*seq, out=False)
-    Retro transcription d'un ou plusieurs rna SeqRecord. Si out == True, chaque dna est sauvegardé dans un fasta. Return dna SeqRecord ou une liste de dna SeqRecord
+    Retro transcription d'un ou plusieurs rna SeqRecord. Si out == True, chaque dna est sauvegardé dans un fasta. Return dna SeqRecord ou une liste de dna SeqRecord
 
 
     >>> dna_c = retro_transcribe(rna)
     >>> dna_c
-    SeqRecord(seq=Seq('ATGGCCCAGCAGTGGAGCCTCCAAAGGCTCGCAGGCCGCCATCCGCAGGACAGC...TGA', DNAAlphabet()), id='gene_opsine_rouge.rna.dnac', name='gene_opsine_rouge.rna.dnac', description='retro transcription de [transcription de [gene_opsine_rouge red opsin Homo sapiens opsin 1 (cone pigments), mRNA]]', dbxrefs=[])
+    SeqRecord(seq=Seq('ATGGCCCAGCAGTGGAGCCTCCAAAGGCTCGCAGGCCGCCATCCGCAGGACAGC...TGA', DNAAlphabet()), id='gene_opsine_rouge.rna.dnac', name='gene_opsine_rouge.rna.dnac', description='retro transcription de [transcription de [gene_opsine_rouge red opsin Homo sapiens opsin 1 (cone pigments), mRNA]]', dbxrefs=[])
     >>> 
     >>> dna.seq == dna_c.seq
     True
 
+
+<a name="needlewater"></a>
+
+### Comparer deux séquences: alignement par Needle ou Water
+
+On commence par rechercher des séquences:
+
+    >>> q = search("primates")
+    >>> 
+    >>> len(q)
+    7
+    >>> 
+    >>> q[0]
+    SeqRecord(seq=Seq('TTCTTTCATGGGGAAGCAGATTTGGGTGCCACCCAAGTATTGACTCACCCATCA...CAT', SingleLetterAlphabet()), id='Refhumaine.adn', name='Refhumaine.adn', description=' Refhumaine.adn', dbxrefs=[])
+
+On va ensuite comparer les séquences 2 à 2. 
+
+Il est possible de faire un alignement global (needle) ou local (water)
+
+    >>> help(needle)
+    Help on function needle in module genopy:
+
+    needle(*seq, gapopen=10, gapextend=0.5, out='emb.aln')
+         Alignement global par la methode de Needleman
+    
+    arguments:
+            
+            seq: couple de 2 SeqRecord à aligner
+            gapopen: pénalité de gap
+            gapextend: pénalité d'expansion
+            out: nom du fichier emboss créé
+            
+    return: un objet align
+
+L'alignement est enregistré par défaut dans le fichier emb.aln (qui serra écrasé au prochain alignement réalisé)
+Dans les 2 cas on peut eventuellement modifier les pénalités pour les ouvertures ou les extensions de gap.
+
+
+    >>> n = needle(q[0], q[1])
+    >>> 
+    >>> w = water(q[0], q[1])
+    >>> 
+    >>> n
+    <<class 'Bio.Align.MultipleSeqAlignment'> instance (2 records of length 365, SingleLetterAlphabet()) at 70615df0>
+    >>> w
+    <<class 'Bio.Align.MultipleSeqAlignment'> instance (2 records of length 361, SingleLetterAlphabet()) at 7061def0>
+
+
+On obtient des objet "align" que l'on peut alors exploiter de différentes façons:
+
+Obtenir des informations de base sur l'alignement:
+
+    >>> print(n)
+    SingleLetterAlphabet() alignment with 2 rows and 365 columns
+    TTCTTTCATGGGGAAGCAGATTTGGGTGCCACCCAAGTATTGAC...--- Refhumaine.adn
+    TTCTTTCATGGGGGATCAGATTTGGGTACCACCCCAGT----AC...GGA Orangoutan.adn
+    
+    >>> n.
+    n.add_sequence(          n.append(                n.extend(                n.get_alignment_length(  
+    n.annotations            n.column_annotations     n.format(                n.sort(                  
+    
+    >>> n.get_alignment_length()
+    365
+    
+    >>> len(n)
+    2
+    
+    >>> n[0]
+    SeqRecord(seq=Seq('TTCTTTCATGGGGAAGCAGATTTGGGTGCCACCCAAGTATTGACTCACCCATCA...---', SingleLetterAlphabet()), id='Refhumaine.adn', name='<unknown name>', description='Refhumaine.adn', dbxrefs=[])
+ 
+
+
+Afficher l'alignement avec les fonctions shogenix(), showanag(), (ou showgenix3() pour les séquences peptidiques avec acides aminés représentés à trois lettres)
+
+    >>> showgenix(n)
+
+
+                          ************* * *********** ****** ***    **  ******   ** * 
+    Refhumaine.adn        TTCTTTCATGGGGAAGCAGATTTGGGTGCCACCCAAGTATTGACTCACCCATCAACAACC
+    Orangoutan.adn        TTCTTTCATGGGGGATCAGATTTGGGTACCACCCCAGT----ACCGACCCATTTCCAGCG
+
+                          ----:----|----:----|----:----|----:----|----:----|----:----|
+                                   10        20        30        40        50        60
+
+
+
+                          * ****************** ********** *********   **   ** **  *** 
+    Refhumaine.adn        G-CTATGTATTTCGTACATTACTGCCAGCCACCATGAATATTGTACGGTAC-CATAAAT-
+    Orangoutan.adn        GCCTATGTATTTCGTACATTCCTGCCAGCCAACATGAATAT--CACCCAACACAACAATC
+
+                          ----:----|----:----|----:----|----:----|----:----|----:----|
+                                   70        80        90        100       110       120
+
+
+
+
+    >>> showanag(n)
+
+
+                          ************* * *********** ****** ***    **  ******   ** * 
+    Refhumaine.adn        TTCTTTCATGGGGAAGCAGATTTGGGTGCCACCCAAGTATTGACTCACCCATCAACAACC
+    Orangoutan.adn        -------------G-T-----------A------C---____--CG------TTC--G-G
+
+                          ----:----|----:----|----:----|----:----|----:----|----:----|
+                                   10        20        30        40        50        60
+
+
+
+                          * ****************** ********** *********   **   ** **  *** 
+    Refhumaine.adn        G_CTATGTATTTCGTACATTACTGCCAGCCACCATGAATATTGTACGGTAC_CATAAAT_
+    Orangoutan.adn        -C------------------C----------A---------__C--CCA--A--AC---C
+
+                          ----:----|----:----|----:----|----:----|----:----|----:----|
+                                   70        80        90        100       110       120
+                                                                  
+
+
+
+
+Il est aussi possible de lire l'alignement enregistré dans le fichier emb.aln avec la fonction reademboss() 
+
+
+    >>> help(reademboss)
+    Help on function reademboss in module genopy:
+
+    reademboss(path='emb.aln')
+        Cette fonction affiche le contenu de l'alignement emboss contenu dans le fichier à l'adresse "path", et return un objet align
+
+
+    >>> n = needle(q[0], q[1])
+
+    >>> reademboss("emb.aln") 
+
+    ########################################
+    # Program: needle
+    # Rundate: Sun 14 Jul 2019 11:13:59
+    # Commandline: needle
+    #    -outfile emb.aln
+    #    -asequence seqa.fas
+    #    -bsequence seqb.fas
+    #    -gapopen 10
+    #    -gapextend 0.5
+    # Align_format: srspair
+    # Report_file: emb.aln
+    ########################################
+
+    #=======================================
+    #
+    # Aligned_sequences: 2
+    # 1: Refhumaine.adn
+    # 2: Orangoutan.adn
+    # Matrix: EDNAFULL
+    # Gap_penalty: 10.0
+    # Extend_penalty: 0.5
+    #
+    # Length: 365
+    # Identity:     255/365 (69.9%)
+    # Similarity:   255/365 (69.9%)
+    # Gaps:          40/365 (11.0%)
+    # Score: 824.5
+    # 
+    #
+    #=======================================
+
+    Refhumaine.ad      1 TTCTTTCATGGGGAAGCAGATTTGGGTGCCACCCAAGTATTGACTCACCC     50
+                         |||||||||||||.|.|||||||||||.||||||.|||    ||..||||
+    Orangoutan.ad      1 TTCTTTCATGGGGGATCAGATTTGGGTACCACCCCAGT----ACCGACCC     46
+
+    Refhumaine.ad     51 ATCAACAACCG-CTATGTATTTCGTACATTACTGCCAGCCACCATGAATA     99
+                         ||...||.|.| ||||||||||||||||||.||||||||||.||||||||
+    Orangoutan.ad     47 ATTTCCAGCGGCCTATGTATTTCGTACATTCCTGCCAGCCAACATGAATA     96
+
+
+    #---------------------------------------
+    #---------------------------------------
+
+    <<class 'Bio.Align.MultipleSeqAlignment'> instance (2 records of length 365, SingleLetterAlphabet()) at 70603ab0>
+
+
+(Les alignements ne sont pas représentés en entier dans ce tutoriel)
 
 
 
