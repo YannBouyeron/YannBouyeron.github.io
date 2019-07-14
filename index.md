@@ -522,6 +522,13 @@ Il est aussi possible de lire l'alignement enregistré dans le fichier emb.aln a
 
 (Les alignements ne sont pas représentés en entier dans ce tutoriel)
 
+Il est possible d'afficher le % de similitudes ou de différences en utilisant la fonction reademboss (comme ci dessous) ou en affichant la matrice de distance avec la fonction matrix()
+
+    >>> m = matrix(n)
+    >>> print(m)
+    Refhumaine.adn  0
+    rangoutan.adn   0.3013698630136986      0
+                    Refhumaine.adn          Orangoutan.adn
 
 
 # Introduction à Pandas.
