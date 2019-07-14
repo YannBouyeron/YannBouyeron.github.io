@@ -556,7 +556,7 @@ On commence par importer des séquences:
     25
     >>> 
     >>> q[0]
-    SeqRecord(seq=Seq('ATGCTCCTGGCTGTTTTGTACTGCCTGCTGTGGAGTTTCCAGACCTCCGCTGGC...TAA', SingleLetterAlphabet()), id='Tyrcod2', name='Tyrcod2', description="Tyrcod2  Partie strictement codante d'un allele du gene de la tyrosinase (ref erence 2).", dbxrefs=[])
+    SeqRecord(seq=Seq('ATGCTCCTGGCTGTTTTGTACTGCCTGCTGTGGAGTTTCCAGACCTCCGCTGGC...TAA', SingleLetterAlphabet()), id='Tyrcod2', name='Tyrcod2', description="Tyrcod2  Partie strictement codante d'un allele du gene de la tyrosinase (ref erence 2).", dbxrefs=[])
 
 Puis on utilise la fonction clustal:
 
@@ -590,7 +590,7 @@ Affichage simple:
     ATGCTCCTGGCTGTTTTGTACTGCCTGCTGTGGAGTTTCCAGAC...TAA F4_I1all1
     >>> 
 
-Methodes applicables à l'ojet align:
+Méthodes applicables à l'ojet align:
 
     >>> c.
     c.add_sequence(          c.append(                c.extend(                c.get_alignment_length(  
@@ -603,11 +603,11 @@ Affichage au format clustal:
     CLUSTAL 2.1 multiple sequence alignment
 
    
-    F4_I2all1                           ATGCTCCTGGCTGTTTTGTACTGCCTGCTGTGGAGTTTCCAGACCTCCGC
-    F4_I2all2                           ATGCTCCTGGCTGTTTTGTACTGCCTGCTGTGGAGTTTCCAGACCTCCGC
-    F4_I1all2                           ATGCTCCTGGCTGTTTTGTACTGCCTGCTGTGGAGTTTCCAGACCTCCGC
-    F4_I1all1                           ATGCTCCTGGCTGTTTTGTACTGCCTGCTGTGGAGTTTCCAGACCTCCGC
-                                        **************************************************
+    F4_I2all1     ATGCTCCTGGCTGTTTTGTACTGCCTGCTGTGGAGTTTCCAGACCTCCGC
+    F4_I2all2     ATGCTCCTGGCTGTTTTGTACTGCCTGCTGTGGAGTTTCCAGACCTCCGC
+    F4_I1all2     ATGCTCCTGGCTGTTTTGTACTGCCTGCTGTGGAGTTTCCAGACCTCCGC
+    F4_I1all1     ATGCTCCTGGCTGTTTTGTACTGCCTGCTGTGGAGTTTCCAGACCTCCGC
+                  **************************************************
 
 
 Affichage au format phylip:
@@ -655,7 +655,7 @@ La fonction matrix attend un alignement (needle, water ou clustal) en argument o
     F4_I1all1       0.0012578616352201255   0.0006289308176100628   0.0012578616352201255   0
                     F4_I2all1                F4_I2all2               F4_I1all2              F4_I1all1
 
-La matrice peut être convertie en table HTML et déployée sur IPFS avec la fonction matrix2ipfs:
+La matrice peut être convertie en table HTML et déployée sur [IPFS](https://gist.github.com/YannBouyeron/53e6d67782dcff5995754b0a7333fa0b) avec la fonction matrix2ipfs:
 
     >>> matrix2ipfs(m)
     'QmcMhGpqsiCoyoPmbUf4xuX7ayMNiVHEkU44t4XMyWm2AK'
@@ -664,7 +664,7 @@ On obtient le hash du fichier HTML, consultable sur votre noeud ipfs ou via ipfs
 	
 	https://http://ipfs.io/ipfs/QmcMhGpqsiCoyoPmbUf4xuX7ayMNiVHEkU44t4XMyWm2AK
 
-La matrice peut aussi être sauvegarder sous forme d'image png qui serra enregistrée localement:
+La matrice peut aussi être sauvegardée sous forme d'image png qui serra enregistrée localement:
 
     >>> help(matrix2png)
     Help on function matrix2png in module genopy:
