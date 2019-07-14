@@ -1,3 +1,3 @@
-<p>YannBouyeron.github.io</p>
+YannBouyeron.github.io
           
-          Python pour les SVT
+Python pour les SVT
