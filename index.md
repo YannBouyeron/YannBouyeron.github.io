@@ -64,6 +64,14 @@
 
 [Comparer des séquences: alignement par paires](#needlewater)
 
+[Comparer des séquences: alignement multiple (clustal)](#clustal)
+
+[Afficher et sauvegarder une matrice de distances](#matrix)
+
+[Tracer un arbre phylogénétique à partir d'une matrice de distances](#phylomatrix)
+
+[Tracer un arbre phylogénétique à partir d'une liste de séquences](#phyloseq)
+
 ## Faire un graphique
 
 [Faire un graphique "simple" avec une seule courbe](#simplegraph)
@@ -288,10 +296,14 @@ On peut alors afficher la séquence du gène de l'opsine verte dont l'indice dan
     translate(*seq, table_id=1, to_stop=True, stop_symbol=' ', cds=True, out=False)
     Traduction d'un ou plusieurs dna ou rna SeqRecord. Si out == True, chaque proteine est sauvegardée dans un fasta. Return proteine SeqRecord ou une liste de proteines SeqRecord
  
-ORF: open reading frame ou phase ouverte de lecture, c'est la séquence du brin non transcrit (brin codant) de l'adn (ou de l'arn pré-messager) située entre le premier codon initiateur jusqu'au premier codon stop 
+> ORF: open reading frame ou phase ouverte de lecture, c'est la séquence du brin non transcrit (brin codant) de l'adn (ou de l'arn pré-messager) située entre le premier codon initiateur jusqu'au premier codon stop 
 
-CDS: coding sequence ou séquence codante, c'est l'ORF sans les introns
+> CDS: coding sequence ou séquence codante, c'est l'ORF sans les introns
 
+Il est possible de choisir la table du code génétique utilisée (par défaut c'est le code standard)
+L'argument to_stop = True permet d'arreter la traduction au codon stop
+L'argument stop_symbol permet de spécifier la représentation de l'arret de la traduction
+L'argument cds = True implique que la traduction commencera au premier codon initiateur rencontré et se terminera au premier codon stop rencontré sur le cadre de lecture. La majorité des séquences importée depuis anangene sont déjà des CDS, donc ca change rien; mais ce n'est pas le cas des fasta téléchargés depuis les banques de sequences. 
 
     >>> pep = translate(rna)
     >>> pep
@@ -415,6 +427,8 @@ Obtenir des informations de base sur l'alignement:
 
 Afficher l'alignement avec les fonctions shogenix(), showanag(), (ou showgenix3() pour les séquences peptidiques avec acides aminés représentés à trois lettres)
 
+L'affichage via showgenix représente toutes les séquences. Les similitudes sont symbolisées par une * et les délétions par des - . 
+
     >>> showgenix(n)
 
 
@@ -435,7 +449,7 @@ Afficher l'alignement avec les fonctions shogenix(), showanag(), (ou showgenix3(
                                    70        80        90        100       110       120
 
 
-
+L'affichage via showanag utilise le même mode de symbolisation que le logiciel anagene.
 
     >>> showanag(n)
 
@@ -529,6 +543,146 @@ Il est possible d'afficher le % de similitudes ou de différences en utilisant l
     Refhumaine.adn  0
     rangoutan.adn   0.3013698630136986      0
                     Refhumaine.adn          Orangoutan.adn
+
+<a name="clustal"></a>
+
+### Comparaison multiple de séquences avec Clustal
+
+On commence par importer des séquences:
+
+    >>> q = search("tyr")
+    >>> 
+    >>> len(q)
+    25
+    >>> 
+    >>> q[0]
+    SeqRecord(seq=Seq('ATGCTCCTGGCTGTTTTGTACTGCCTGCTGTGGAGTTTCCAGACCTCCGCTGGC...TAA', SingleLetterAlphabet()), id='Tyrcod2', name='Tyrcod2', description="Tyrcod2  Partie strictement codante d'un allele du gene de la tyrosinase (ref erence 2).", dbxrefs=[])
+
+Puis on utilise la fonction clustal:
+
+    >>> help(clustal)
+    Help on function clustal in module genopy:
+
+    clustal(*seq, out='comp.aln', std=False)
+        Alginement multiple ClustalW
+    
+    arguments:
+            
+            seq: liste des SeqRecord à aligner
+            out: path du fichier contenant l'alignement créé
+            std: bool, si True, return align et stdout , defaut = False
+            
+    Return: l'objet align
+
+
+
+    >>> c = clustal(*q[5:9])
+    >>> c
+    <<class 'Bio.Align.MultipleSeqAlignment'> instance (4 records of length 1590, SingleLetterAlphabet()) at 704f06f0>
+    
+Affichage simple: 
+
+    >>> print(c)
+    SingleLetterAlphabet() alignment with 4 rows and 1590 columns
+    ATGCTCCTGGCTGTTTTGTACTGCCTGCTGTGGAGTTTCCAGAC...TAA F4_I2all1
+    ATGCTCCTGGCTGTTTTGTACTGCCTGCTGTGGAGTTTCCAGAC...TAA F4_I2all2
+    ATGCTCCTGGCTGTTTTGTACTGCCTGCTGTGGAGTTTCCAGAC...TAA F4_I1all2
+    ATGCTCCTGGCTGTTTTGTACTGCCTGCTGTGGAGTTTCCAGAC...TAA F4_I1all1
+    >>> 
+
+Methodes applicables à l'ojet align:
+
+    >>> c.
+    c.add_sequence(          c.append(                c.extend(                c.get_alignment_length(  
+    c.annotations            c.column_annotations     c.format(                c.sort(                  
+    
+    
+Affichage au format clustal:
+
+    >>> print(c.format("clustal"))
+    CLUSTAL 2.1 multiple sequence alignment
+
+   
+    F4_I2all1                           ATGCTCCTGGCTGTTTTGTACTGCCTGCTGTGGAGTTTCCAGACCTCCGC
+    F4_I2all2                           ATGCTCCTGGCTGTTTTGTACTGCCTGCTGTGGAGTTTCCAGACCTCCGC
+    F4_I1all2                           ATGCTCCTGGCTGTTTTGTACTGCCTGCTGTGGAGTTTCCAGACCTCCGC
+    F4_I1all1                           ATGCTCCTGGCTGTTTTGTACTGCCTGCTGTGGAGTTTCCAGACCTCCGC
+                                        **************************************************
+
+
+Affichage au format phylip:
+
+    >>> print(c.format("phylip"))
+    4 1590
+    F4_I2all1  ATGCTCCTGG CTGTTTTGTA CTGCCTGCTG TGGAGTTTCC AGACCTCCGC
+    F4_I2all2  ATGCTCCTGG CTGTTTTGTA CTGCCTGCTG TGGAGTTTCC AGACCTCCGC
+    F4_I1all2  ATGCTCCTGG CTGTTTTGTA CTGCCTGCTG TGGAGTTTCC AGACCTCCGC
+    F4_I1all1  ATGCTCCTGG CTGTTTTGTA CTGCCTGCTG TGGAGTTTCC AGACCTCCGC
+
+               TGGCCATTTC CCTAGAGCCT GTGTCTCCTC TAAGAACCTG ATGGAGAAGG
+               TGGCCATTTC CCTAGAGCCT GTGTCTCCTC TAAGAACCTG ATGGAGAAGG
+               TGGCCATTTC CCTAGAGCCT GTGTCTCCTC TAAGAACCTG ATGGAGAAGG
+               TGGCCATTTC CCTAGAGCCT GTGTCTCCTC TAAGAACCTG ATGGAGAAGG
+
+
+Affichage au format genix:
+
+    >>> showgenix(c)
+
+
+                     ************************************************************
+    F4_I2all1        ATGCTCCTGGCTGTTTTGTACTGCCTGCTGTGGAGTTTCCAGACCTCCGCTGGCCATTTC
+    F4_I2all2        ATGCTCCTGGCTGTTTTGTACTGCCTGCTGTGGAGTTTCCAGACCTCCGCTGGCCATTTC
+    F4_I1all2        ATGCTCCTGGCTGTTTTGTACTGCCTGCTGTGGAGTTTCCAGACCTCCGCTGGCCATTTC
+    F4_I1all1        ATGCTCCTGGCTGTTTTGTACTGCCTGCTGTGGAGTTTCCAGACCTCCGCTGGCCATTTC
+
+                     ----:----|----:----|----:----|----:----|----:----|----:----|
+                              10        20        30        40        50        60
+
+Il est aussi possible de faire un affichage de l'alignement au format anagene avec la fonction showanag().
+
+<a name="matrix"></a>
+
+Affichage de la matrice de distance:
+
+La fonction matrix attend un alignement (needle, water ou clustal) en argument obligatoire:
+
+    >>> m = matrix(c)
+    >>> print(m)
+    F4_I2all1       0
+    F4_I2all2       0.0006289308176100628   0
+    F4_I1all2       0.0012578616352201255   0.0006289308176100628   0
+    F4_I1all1       0.0012578616352201255   0.0006289308176100628   0.0012578616352201255   0
+                    F4_I2all1                F4_I2all2               F4_I1all2              F4_I1all1
+
+La matrice peut être convertie en table HTML et déployée sur IPFS avec la fonction matrix2ipfs:
+
+    >>> matrix2ipfs(m)
+    'QmcMhGpqsiCoyoPmbUf4xuX7ayMNiVHEkU44t4XMyWm2AK'
+
+On obtient le hash du fichier HTML, consultable sur votre noeud ipfs ou via ipfs.io: https://http://ipfs.io/ipfs/<hash>:
+	
+	https://http://ipfs.io/ipfs/QmcMhGpqsiCoyoPmbUf4xuX7ayMNiVHEkU44t4XMyWm2AK
+
+La matrice peut aussi être sauvegarder sous forme d'image png qui serra enregistrée localement:
+
+    >>> help(matrix2png)
+    Help on function matrix2png in module genopy:
+
+    matrix2png(matrix, path='', scale=0.6, cmap='YlGnBu')
+        Transforme une matrice de distance en image png
+    
+    arguments:
+            matrix: pd.DataFrame ou distance matrice retournee par la fonction matrix
+            path (otpionnel): path en .png de l'image
+            scale (optionnel) [defaut=0.6] : taille du texte (légendes, titres, cellules)
+            cmap (optionnel) [defaut="YlGnBu"] : palette de couleurs
+            
+    return: objet heatmap
+
+
+    >>> matrix2png(m)
+    <matplotlib.axes._subplots.AxesSubplot object at 0x704f0a50>
 
 
 # Introduction à Pandas.
