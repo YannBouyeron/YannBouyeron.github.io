@@ -297,13 +297,16 @@ On peut alors afficher la séquence du gène de l'opsine verte dont l'indice dan
     Traduction d'un ou plusieurs dna ou rna SeqRecord. Si out == True, chaque proteine est sauvegardée dans un fasta. Return proteine SeqRecord ou une liste de proteines SeqRecord
  
 > ORF: open reading frame ou phase ouverte de lecture, c'est la séquence du brin non transcrit (brin codant) de l'adn (ou de l'arn pré-messager) située entre le premier codon initiateur jusqu'au premier codon stop 
-
+> 
 > CDS: coding sequence ou séquence codante, c'est l'ORF sans les introns
 
 Il est possible de choisir la table du code génétique utilisée (par défaut c'est le code standard)
+
 L'argument to_stop = True permet d'arreter la traduction au codon stop
+
 L'argument stop_symbol permet de spécifier la représentation de l'arret de la traduction
-L'argument cds = True implique que la traduction commencera au premier codon initiateur rencontré et se terminera au premier codon stop rencontré sur le cadre de lecture. La majorité des séquences importée depuis anangene sont déjà des CDS, donc ca change rien; mais ce n'est pas le cas des fasta téléchargés depuis les banques de sequences. 
+
+L'argument cds = True implique que la traduction commencera au premier codon initiateur rencontré et se terminera au premier codon stop rencontré sur le cadre de lecture. La majorité des séquences importées depuis anangene sont déjà des CDS, donc ca change rien; mais ce n'est pas le cas des fasta téléchargés depuis les banques de séquences. 
 
     >>> pep = translate(rna)
     >>> pep
@@ -388,6 +391,7 @@ Il est possible de faire un alignement global (needle) ou local (water)
     return: un objet align
 
 L'alignement est enregistré par défaut dans le fichier emb.aln (qui serra écrasé au prochain alignement réalisé)
+
 Dans les 2 cas on peut eventuellement modifier les pénalités pour les ouvertures ou les extensions de gap.
 
 
