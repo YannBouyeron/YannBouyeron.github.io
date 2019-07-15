@@ -62,6 +62,8 @@
 
 [Rétro-Transcrire](#rt)
 
+[Afficher les tables du code génétique](#tablecode)
+
 [Comparer des séquences: alignement par paires](#needlewater)
 
 [Comparer des séquences: alignement multiple (clustal)](#clustal)
@@ -365,6 +367,135 @@ L'argument cds = True implique que la traduction commencera au premier codon ini
     >>> 
     >>> dna.seq == dna_c.seq
     True
+
+<a name="tablecode"></a>
+
+### Afficher les tables du code génétique
+
+
+    >>> help(codegen)
+    Help on function codegen in module genopy:
+
+    codegen(table_id=None, bydna=False)
+        Affiche et retourne la table du code génétique correspondant à l'id entré en argument
+
+
+    >>> codegen()
+
+
+    1 : Standard
+    2 : Vertebrate Mitochondrial
+    3 : Yeast Mitochondrial
+    4 : Mold Mitochondrial
+    5 : Invertebrate Mitochondrial
+    6 : Ciliate Nuclear
+    9 : Echinoderm Mitochondrial
+    10 : Euplotid Nuclear
+    11 : Bacterial
+    12 : Alternative Yeast Nuclear
+    13 : Ascidian Mitochondrial
+    14 : Alternative Flatworm Mitochondrial
+    15 : Blepharisma Macronuclear
+    16 : Chlorophycean Mitochondrial
+    21 : Trematode Mitochondrial
+    22 : Scenedesmus obliquus Mitochondrial
+    23 : Thraustochytrium Mitochondrial
+    24 : Pterobranchia Mitochondrial
+    25 : Candidate Division SR1
+    26 : Pachysolen tannophilus Nuclear
+    27 : Karyorelict Nuclear
+    28 : Condylostoma Nuclear
+    29 : Mesodinium Nuclear
+    30 : Peritrich Nuclear
+    31 : Blastocrithidia Nuclear
+
+
+
+
+    Entrez le numéro de la table à afficher: 1
+
+
+    RNA table: 
+
+    Table 1 Standard, SGC0
+
+      |  U      |  C      |  A      |  G      |
+    --+---------+---------+---------+---------+--
+    U | UUU F   | UCU S   | UAU Y   | UGU C   | U
+    U | UUC F   | UCC S   | UAC Y   | UGC C   | C
+    U | UUA L   | UCA S   | UAA Stop| UGA Stop| A
+    U | UUG L(s)| UCG S   | UAG Stop| UGG W   | G
+    --+---------+---------+---------+---------+--
+    C | CUU L   | CCU P   | CAU H   | CGU R   | U
+    C | CUC L   | CCC P   | CAC H   | CGC R   | C
+    C | CUA L   | CCA P   | CAA Q   | CGA R   | A
+    C | CUG L(s)| CCG P   | CAG Q   | CGG R   | G
+    --+---------+---------+---------+---------+--
+    A | AUU I   | ACU T   | AAU N   | AGU S   | U
+    A | AUC I   | ACC T   | AAC N   | AGC S   | C
+    A | AUA I   | ACA T   | AAA K   | AGA R   | A
+    A | AUG M(s)| ACG T   | AAG K   | AGG R   | G
+    --+---------+---------+---------+---------+--
+    G | GUU V   | GCU A   | GAU D   | GGU G   | U
+    G | GUC V   | GCC A   | GAC D   | GGC G   | C
+    G | GUA V   | GCA A   | GAA E   | GGA G   | A
+    G | GUG V   | GCG A   | GAG E   | GGG G   | G
+    --+---------+---------+---------+---------+--
+
+
+    <Bio.Data.CodonTable.NCBICodonTableRNA object at 0x74a047d0>
+
+    
+    
+    
+    >>> cg = codegen(1, bydna=True)
+
+
+    DNA table: 
+
+    Table 1 Standard, SGC0
+
+      |  T      |  C      |  A      |  G      |
+    --+---------+---------+---------+---------+--
+    T | TTT F   | TCT S   | TAT Y   | TGT C   | T
+    T | TTC F   | TCC S   | TAC Y   | TGC C   | C
+    T | TTA L   | TCA S   | TAA Stop| TGA Stop| A
+    T | TTG L(s)| TCG S   | TAG Stop| TGG W   | G
+    --+---------+---------+---------+---------+--
+    C | CTT L   | CCT P   | CAT H   | CGT R   | T
+    C | CTC L   | CCC P   | CAC H   | CGC R   | C
+    C | CTA L   | CCA P   | CAA Q   | CGA R   | A
+    C | CTG L(s)| CCG P   | CAG Q   | CGG R   | G
+    --+---------+---------+---------+---------+--
+    A | ATT I   | ACT T   | AAT N   | AGT S   | T
+    A | ATC I   | ACC T   | AAC N   | AGC S   | C
+    A | ATA I   | ACA T   | AAA K   | AGA R   | A
+    A | ATG M(s)| ACG T   | AAG K   | AGG R   | G
+    --+---------+---------+---------+---------+--
+    G | GTT V   | GCT A   | GAT D   | GGT G   | T
+    G | GTC V   | GCC A   | GAC D   | GGC G   | C
+    G | GTA V   | GCA A   | GAA E   | GGA G   | A
+    G | GTG V   | GCG A   | GAG E   | GGG G   | G
+    --+---------+---------+---------+---------+--
+
+
+    >>> cg.
+    cg.back_table           cg.id                   cg.nucleotide_alphabet  cg.start_codons         
+    cg.forward_table        cg.names                cg.protein_alphabet     cg.stop_codons          
+
+    >>> cg.start_codons
+    ['TTG', 'CTG', 'ATG']
+
+    >>> cg.back_table
+    {'K': 'AAG', 'N': 'AAT', 'T': 'ACT', 'R': 'CGT', 'S': 'TCT', 'I': 'ATT', 'M': 'ATG', 'Q': 'CAG', 'H': 'CAT', 'P': 'CCT', 'L': 'TTG', 'E': 'GAG', 'D': 'GAT', 'A': 'GCT', 'G': 'GGT', 'V': 'GTT', 'Y': 'TAT', 'C': 'TGT', 'W': 'TGG', 'F': 'TTT', None: 'TAA'}
+
+    >>> cg.forward_table
+    {'TTT': 'F', 'TTC': 'F', 'TTA': 'L', 'TTG': 'L', 'TCT': 'S', 'TCC': 'S', 'TCA': 'S', 'TCG': 'S', 'TAT': 'Y', 'TAC': 'Y', 'TGT': 'C', 'TGC': 'C', 'TGG': 'W', 'CTT': 'L', 'CTC': 'L', 'CTA': 'L', 'CTG': 'L', 'CCT': 'P', 'CCC': 'P', 'CCA': 'P', 'CCG': 'P', 'CAT': 'H', 'CAC': 'H', 'CAA': 'Q', 'CAG': 'Q', 'CGT': 'R', 'CGC': 'R', 'CGA': 'R', 'CGG': 'R', 'ATT': 'I', 'ATC': 'I', 'ATA': 'I', 'ATG': 'M', 'ACT': 'T', 'ACC': 'T', 'ACA': 'T', 'ACG': 'T', 'AAT': 'N', 'AAC': 'N', 'AAA': 'K', 'AAG': 'K', 'AGT': 'S', 'AGC': 'S', 'AGA': 'R', 'AGG': 'R', 'GTT': 'V', 'GTC': 'V', 'GTA': 'V', 'GTG': 'V', 'GCT': 'A', 'GCC': 'A', 'GCA': 'A', 'GCG': 'A', 'GAT': 'D', 'GAC': 'D', 'GAA': 'E', 'GAG': 'E', 'GGT': 'G', 'GGC': 'G', 'GGA': 'G', 'GGG': 'G'}
+
+    >>> cg.forward_table["AAC"]
+    'N' 
+
+
 
 
 <a name="needlewater"></a>
@@ -706,7 +837,7 @@ La matrice peut aussi être sauvegardée sous forme d'image png qui serra enregi
 
 <a name="phylomatrix"></a>
 
-## Construire un arbre phylogénétique à partir d'une matrice de distances
+### Construire un arbre phylogénétique à partir d'une matrice de distances
 
     >>> q = search("tyr")
     >>> c = clustal(*q[5:10])
@@ -742,7 +873,7 @@ La matrice peut aussi être sauvegardée sous forme d'image png qui serra enregi
     >>> up = tree_upgma(m)
 
 
-     _________________________________________________________________ F4_I2all1
+      _________________________________________________________________ F4_I2all1
     _|
      |         ________________________________________________________ F4_I1all2
      |________|
@@ -778,7 +909,7 @@ Pour afficher les distances sur les branches de l'arbre:
 
 <a name="phyloseq"></a>
 
-## Construire un arbre phylogénétique à partir d'une liste de séquences
+### Construire un arbre phylogénétique à partir d'une liste de séquences
 
 # Introduction à Pandas.
 
