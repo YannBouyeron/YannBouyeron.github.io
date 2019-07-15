@@ -708,6 +708,74 @@ La matrice peut aussi être sauvegardée sous forme d'image png qui serra enregi
 
 ## Construire un arbre phylogénétique à partir d'une matrice de distances
 
+    >>> q = search("tyr")
+    >>> c = clustal(*q[5:10])
+    >>> m = matrix(c)
+    
+    >>> print(m)
+    F4_I2all2       0
+    4_II1all1       0.0                     0
+    F4_I2all1       0.0006289308176100628   0.0006289308176100628   0
+    F4_I1all2       0.0006289308176100628   0.0006289308176100628   0.0012578616352201255   0
+    F4_I1all1       0.0006289308176100628   0.0006289308176100628   0.0012578616352201255   0.0012578616352201255   0
+                    F4_I2all2               F4_II1all1              F4_I2all1               F4_I1all2               F4_I1all1
+
+
+    >>> nj = tree_nj(m)
+
+
+     , F4_I2all2
+     |
+     | F4_II1all1
+     |
+     |_________________________________________________________________ F4_I2all1
+    _|
+     |_________________________________________________________________ F4_I1all2
+     |
+     |_________________________________________________________________ F4_I1all1
+
+
+    >>> nj
+    Tree(rooted=True)
+
+
+    >>> up = tree_upgma(m)
+
+
+     _________________________________________________________________ F4_I2all1
+    _|
+     |         ________________________________________________________ F4_I1all2
+     |________|
+              |                   _____________________________________ F4_I1all1
+              |__________________|
+                                 |                                     , F4_II1all1
+                                 |_____________________________________|
+                                                                       | F4_I2all2
+
+
+
+    >>> pa = parsimony_tree(c, nj)
+
+
+      _________________________________________________________________ F4_I2all1
+     |
+     , F4_II1all1
+     |
+     | F4_I2all2
+    _|
+     |_________________________________________________________________ F4_I1all1
+     |
+     |_________________________________________________________________ F4_I1all2
+
+
+
+Pour afficher les distances sur les branches de l'arbre:
+
+     >>> nj = tree_nj(m)
+     
+     >>> dnj = draw_tree(nj, distance=True)
+
+
 <a name="phyloseq"></a>
 
 ## Construire un arbre phylogénétique à partir d'une liste de séquences
