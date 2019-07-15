@@ -691,8 +691,14 @@ La matrice peut aussi être sauvegardée sous forme d'image png qui serra enregi
     return: objet heatmap
 
 
-    >>> matrix2png(m)
+    >>> matrix2png(m, path="mamatrice.png")
     <matplotlib.axes._subplots.AxesSubplot object at 0x704f0a50>
+
+
+<p align="center">
+  <img src="https://github.com/YannBouyeron/YannBouyeron.github.io/Images/raw/62FFEC5E-3F75-4173-9CF2-222939C40CF8.png
+">
+</p>
 
 
 # Introduction à Pandas.
