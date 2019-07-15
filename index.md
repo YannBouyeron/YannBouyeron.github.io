@@ -90,6 +90,10 @@
 
 ...
 
+## SIG
+
+[Calculer et représenter le déplacement des plaques lithosphériques avec Pandas et Basemap](https://gist.github.com/YannBouyeron/9e9611edeb7e0f7e2c357c22fe659c54)
+
 ## Tutoriel Python3
 
 [Les variables](https://gist.github.com/YannBouyeron/18aca47587fe3e153e1e630af7640674#variable)
@@ -663,7 +667,7 @@ La fonction matrix attend un alignement (needle, water ou clustal) en argument o
     F4_I2all2       0.0006289308176100628   0
     F4_I1all2       0.0012578616352201255   0.0006289308176100628   0
     F4_I1all1       0.0012578616352201255   0.0006289308176100628   0.0012578616352201255   0
-                    F4_I2all1                F4_I2all2               F4_I1all2              F4_I1all1
+                    F4_I2all1               F4_I2all2               F4_I1all2              F4_I1all1
 
 La matrice peut être convertie en table HTML et déployée sur [IPFS](https://gist.github.com/YannBouyeron/53e6d67782dcff5995754b0a7333fa0b) avec la fonction matrix2ipfs:
 
@@ -700,6 +704,13 @@ La matrice peut aussi être sauvegardée sous forme d'image png qui serra enregi
 ">
 </p>
 
+<a name="phylomatrix"></a>
+
+## Construire un arbre phylogénétique à partir d'une matrice de distances
+
+<a name="phyloseq"></a>
+
+## Construire un arbre phylogénétique à partir d'une liste de séquences
 
 # Introduction à Pandas.
 
