@@ -48,8 +48,6 @@
 
 ## Etudier des séquences biologiques avec [Genopy](https://gist.github.com/YannBouyeron/3eb3aa7a79fadb3350096dec0bb5b004)
 
-[Installer Genopy](#installgenopy)
-
 [Créer des séquences](#creatseq)
 
 [Créer des fichiers fasta](#creatfasta)
@@ -142,91 +140,7 @@ ________________________________________________________________________________
 
 # Génopy
 
-<a name="installgenopy"></a>
-
 ### Installation
-
-Genopy est un programme qui  requiert une version de python >= 3.4
-
-#### Installation des dépendances.
-
-Genopy requiert des dépendances python qui ne sont pas présentes dans la librairie standard (numpy, biopython, pandas, matplotlib, seaborn, ipfsapi) et des dépendances non python (Clustalw, Emboss, Rebase, Phylip).
-
-##### Installation des dépendances Python.
-
-	pip install numpy biopython pandas matplotlib seaborn ipfsapi
-
-Si vous avez plusieurs versions de python et que vous souhaitez installer Genopy pour la version de python 3.6 (par exemple):
-
-	Python3.6 -m pip install numpy biopython pandas matplotlib seaborn ipfsapi
-
-##### Installation de Clustalw
-
-http://www.clustal.org/clustal2/
-
-Sur Debian:
-
-	sudo apt-get install clustalw
-
-##### Installation de Emboss
-
-http://emboss.sourceforge.net/download/
-
-Sur Debian:
-
-	sudo apt-get install emboss
-
-##### Installation rebase pour emboss. 
-
-Rebase est indispensable pour utiliser les fonctions liées aux enzymes de restriction; il s'agit notamment des fonctions restrict et remap.
-
-1: placez vous dans le répertoire de rebase
-
-	cd /usr/share/EMBOSS/data/REBASE
-
-2: télécharger les fichiers withrefm et proto depuis le serveur ftp de rebase
-
-	sudo wget ftp://ftp.ebi.ac.uk/pub/databases/rebase/withrefm*
-
-Puis 
-
-	sudo wget ftp://ftp.ebi.ac.uk/pub/databases/rebase/proto*
-
-3: décompresser 
-
-	sudo uncompress withrefm.707.gz
-
-Et 
-
-	sudo uncompress proto.707.gz
-
-Vous n'aurez pas forcément le version 707.... c'est à adapter
-
-4: extraire rebase
-
-	rebaseextract
-
-Et voilà... c'est terminé.
-
-##### Installation de Phylip
-
-http://evolution.genetics.washington.edu/phylip/install.html
-
-
-Sur Debian:
-
-	sudo apt-get install phylip
-
-#### Installation de Genopy
-
-Telechargement avec git:
-
-	~ $ git clone https://gist.github.com/YannBouyeron/3eb3aa7a79fadb3350096dec0bb5b004
-
-
-#### Utilisation
-
-Placez le fichier genopy.py dans votre répertoire courant (répertoire dans lequel vous comptez travailler).
 
 <a name="creatseq"></a>
 
