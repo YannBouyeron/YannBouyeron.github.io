@@ -48,6 +48,8 @@
 
 ## Etudier des séquences biologiques avec [Genopy](https://github.com/YannBouyeron/genopy)
 
+[Installation](https://github.com/YannBouyeron/genopy/blob/master/README.md#installgenopy)
+
 [Créer des séquences](https://github.com/YannBouyeron/genopy/blob/master/README.md#creatseq)
 
 [Créer des fichiers fasta](https://github.com/YannBouyeron/genopy/blob/master/README.md#creatfasta)
