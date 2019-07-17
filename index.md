@@ -50,29 +50,29 @@
 
 [Créer des séquences](https://github.com/YannBouyeron/genopy/blob/master/README.md#creatseq)
 
-[Créer des fichiers fasta](#creatfasta)
+[Créer des fichiers fasta](https://github.com/YannBouyeron/genopy/blob/master/README.md#creatfasta)
 
-[Convertir des fichiers .edi (anagene) en fichiers fasta](#convedi)
+[Convertir des fichiers .edi (anagene) en fichiers fasta](https://github.com/YannBouyeron/genopy/blob/master/README.md#convedi)
 
-[Rechercher et afficher des séquences](#openseq)
+[Rechercher et afficher des séquences](https://github.com/YannBouyeron/genopy/blob/master/README.md#openseq)
 
-[Transcrire](#transc)
+[Transcrire](https://github.com/YannBouyeron/genopy/blob/master/README.md#transc)
 
-[Traduire](#transl)
+[Traduire](https://github.com/YannBouyeron/genopy/blob/master/README.md#transl)
 
-[Rétro-Transcrire](#rt)
+[Rétro-Transcrire](https://github.com/YannBouyeron/genopy/blob/master/README.md#rt)
 
-[Afficher les tables du code génétique](#tablecode)
+[Afficher les tables du code génétique](https://github.com/YannBouyeron/genopy/blob/master/README.md#tablecode)
 
-[Comparer des séquences: alignement par paires](#needlewater)
+[Comparer des séquences: alignement par paires](https://github.com/YannBouyeron/genopy/blob/master/README.md#needlewater)
 
-[Comparer des séquences: alignement multiple (clustal)](#clustal)
+[Comparer des séquences: alignement multiple (clustal)](https://github.com/YannBouyeron/genopy/blob/master/README.md#clustal)
 
-[Afficher et sauvegarder une matrice de distances](#matrix)
+[Afficher et sauvegarder une matrice de distances](https://github.com/YannBouyeron/genopy/blob/master/README.md#matrix)
 
-[Tracer un arbre phylogénétique à partir d'une matrice de distances](#phylomatrix)
+[Tracer un arbre phylogénétique à partir d'une matrice de distances](https://github.com/YannBouyeron/genopy/blob/master/README.md#phylomatrix)
 
-[Tracer un arbre phylogénétique à partir d'une liste de séquences](#phyloseq)
+[Tracer un arbre phylogénétique à partir d'une liste de séquences](https://github.com/YannBouyeron/genopy/blob/master/README.md#phyloseq)
 
 ## Faire un graphique
 
