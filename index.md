@@ -46,9 +46,9 @@
 
 [Supprimer des lignes](#delraw)
 
-## Etudier des séquences biologiques avec [Genopy](https://gist.github.com/YannBouyeron/3eb3aa7a79fadb3350096dec0bb5b004)
+## Etudier des séquences biologiques avec [Genopy](https://github.com/YannBouyeron/genopy)
 
-[Créer des séquences](#creatseq)
+[Créer des séquences](https://github.com/YannBouyeron/genopy/blob/master/README.md#creatseq)
 
 [Créer des fichiers fasta](#creatfasta)
 
