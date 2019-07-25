@@ -98,6 +98,8 @@
 
 [Calculer et représenter le déplacement des plaques lithosphériques avec Pandas et Basemap](https://gist.github.com/YannBouyeron/9e9611edeb7e0f7e2c357c22fe659c54)
 
+[Introduction à GeoPandas](https://gist.github.com/YannBouyeron/5f0d3d6b76bbea030a471f26cf16c99d)
+
 ## Tutoriel Python3
 
 [Les variables](https://gist.github.com/YannBouyeron/18aca47587fe3e153e1e630af7640674#variable)
