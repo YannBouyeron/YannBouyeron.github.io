@@ -46,9 +46,9 @@
 
 [Supprimer des lignes](#delraw)
 
-#### Régréssions
+#### Régressions
 
-[Régréssions et courbes de tendance avec Koala](https://github.com/YannBouyeron/koala/blob/master/README.md)
+[Régressions et courbes de tendance avec Koala](https://github.com/YannBouyeron/koala/blob/master/README.md)
 
 ## Etudier des séquences biologiques avec [Genopy](https://github.com/YannBouyeron/genopy)
 
