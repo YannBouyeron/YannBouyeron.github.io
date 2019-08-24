@@ -8,6 +8,8 @@
 
 [Importer une base de données au format xlsx](#importxlsx)
 
+[Importer des données au format json](#importjson)
+
 [Créer une base de données au format SQL](#creatsql)
 
 [Créer une base de données au format CSV](#creatcsv)
@@ -443,6 +445,17 @@ Ou
 	0  Diatta  Robert
 	1    Sane    Jean
 	2   Diouf  Albert
+
+<a name="importjson"></a>
+
+        >>> df = pd.read_json("json_file_path.json")
+	
+	>>> df
+	      Nom  Prenom
+	0  Diatta  Robert
+	1    Sane    Jean
+	2   Diouf  Albert
+
 
 ### Sélectionner, trier, filtrer un DataFrame
 
