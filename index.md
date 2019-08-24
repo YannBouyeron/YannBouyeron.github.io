@@ -450,16 +450,18 @@ Ou
 
 ##### A partir d'un fichier json
 
-Il faut alors préciser son path ou son url
+Il faut alors préciser son path ou son url.
+Dans l'exemple ci dessous on utilise un fichier json hébérgé à l'URL suivante: [https://ipfs.io/ipfs/QmfD7A6kpeWYuJMVoNey2GTeNphGg4F8cdXEhWq61Q9shn](https://ipfs.io/ipfs/QmfD7A6kpeWYuJMVoNey2GTeNphGg4F8cdXEhWq61Q9shn). 
 
-        >>> df = pd.read_json("json_file_path.json")
-	
+
+	>>> df = pd.read_json("https://ipfs.io/ipfs/QmfD7A6kpeWYuJMVoNey2GTeNphGg4F8cdXEhWq61Q9shn")
+	 
 	>>> df
-	      Nom  Prenom
+	      nom  prenom
 	0  Diatta  Robert
 	1    Sane    Jean
 	2   Diouf  Albert
-
+ 		
 
 ### Sélectionner, trier, filtrer un DataFrame
 
