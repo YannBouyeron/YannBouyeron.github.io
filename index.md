@@ -8,7 +8,7 @@
 
 [Importer une base de données au format xlsx](#importxlsx)
 
-[Importer des données au format json](#importjson)
+[Importer des données à partir d'un fichier au format json](#importjson)
 
 [Créer une base de données au format SQL](#creatsql)
 
