@@ -448,6 +448,10 @@ Ou
 
 <a name="importjson"></a>
 
+##### A partir d'un fichier json
+
+Il faut alors préciser son path ou son url
+
         >>> df = pd.read_json("json_file_path.json")
 	
 	>>> df
