@@ -52,6 +52,8 @@
 
 [Régressions et courbes de tendance avec Koala](https://github.com/YannBouyeron/koala/blob/master/README.md)
 
+[Croissance et décroissance](https://gist.github.com/YannBouyeron/243714f934852fc9b28887f4b36bf924)
+
 ## Etudier des séquences biologiques avec [Genopy](https://github.com/YannBouyeron/genopy)
 
 [Installation](https://github.com/YannBouyeron/genopy/blob/master/README.md#installgenopy)
