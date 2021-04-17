@@ -38,6 +38,8 @@
 
 [Sélectionner des lignes et des colonnes](#selrawcol)
 
+[Filtrer des lignes par leur contenu](#filtre)
+
 [Ajouter des titres / labels aux colonnes et aux lignes](#addlabel)
 
 [Ajouter des colonnes](#addcol)
@@ -487,6 +489,70 @@ Dans l'exemple ci dessous on utilise un fichier json hébérgé à l'URL suivant
 	2   Diouf  Albert  bebert@gmail.com	
 
 On ne voit pas la différence car mon DataFrame ne fait que trois lignes... mais c’est bien pratique quand on a un DataFrame de 3000 lignes. De plus il est possible de passer le nombre de lignes désiré en argument de head().
+
+<a name="filtre"></a>
+
+##### Filtrer des lignes par leur contenu:
+
+On crée un DataFrame:
+
+	>>>  d = {'nom': ('Diop', 'Diallo', 'Diouf', 'Sane'), 'prenom': ('Alpha', 'Alpha', 'Alpha', 'Jean'), 'age': (30, 37, 28, 42)}
+	
+	>>> df = pd.DataFrame(d)
+	
+	>>> df
+	
+		nom 	prenom  age
+	0   Diop  	Alpha   30
+	1  	Diallo  Alpha   37
+	2  	Diouf  	Alpha   28
+	3	Sane	Jean   	42
+	
+
+Filtrer des lignes ayant pour nom Diallo:
+
+	>>> diallo = df[(df.nom == "Diallo")]
+	
+	>>> diallo
+	
+		nom 	prenom  age
+	1  	Diallo  Alpha   37
+
+Équivalent à:
+
+	>>> df.query('nom == "Diallo"')
+
+Filtrer des lignes ayant pour prénom Alpha **et** un âge supérieur à 29:
+
+	>>> alpha_29 = df[(df.prenom == "Alpha") & (df.age > 29)]
+	
+	>>> alpha_29
+	
+		nom 	prenom  age
+	0	Diop  	Alpha   30
+	1  	Diallo  Alpha   37
+
+Équivalent à:
+
+	>>> df.query('prenom == "Alpha" and age > 29')
+
+
+
+
+Filtrer des lignes ayant pour nom Sane **ou** un âge inférieur à 30:
+
+	>>> sane_30 = df[(df.nom == "Sane") | (df.age < 30)]
+	
+	>>> sane_30
+	
+	     nom prenom  age
+	2  Diouf  Alpha   28
+	3   Sane   Jean   42
+
+Équivalent à:
+
+	>>> df.query('nom == "Sane" or age < 30')
+
 
 <a name="selcollabel"></a>
 
