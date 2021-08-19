@@ -104,17 +104,14 @@
 
 ...
 
-## Datation absolue avec chrono.py
+## Datation absolue avec [chrono.py](https://gist.github.com/YannBouyeron/e4d0315fbf3b2b67859aba84c8d9c352)
 
-[Github chrono.py](https://gist.github.com/YannBouyeron/e4d0315fbf3b2b67859aba84c8d9c352)
 
-ou 
+[Readme](https://ipfs.io/ipfs/QmZRZGBt47t1zUyEnF3ogedXLojmKsSxhQ94VgfLEkwsf1)
+
 
 [nbviewer chrono.ipynb](https://nbviewer.jupyter.org/gist/YannBouyeron/e4d0315fbf3b2b67859aba84c8d9c352/chrono.ipynb)
 
-ou
-
-[Lien IPFS](https://ipfs.io/ipfs/QmZRZGBt47t1zUyEnF3ogedXLojmKsSxhQ94VgfLEkwsf1)
 
 ## SIG
 
