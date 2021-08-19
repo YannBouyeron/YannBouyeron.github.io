@@ -110,7 +110,7 @@
 
 ou 
 
-[nbviewer Chrono.ipynb](https://nbviewer.jupyter.org/gist/YannBouyeron/e4d0315fbf3b2b67859aba84c8d9c352/Chrono.ipynb)
+[nbviewer chrono.ipynb](https://nbviewer.jupyter.org/gist/YannBouyeron/e4d0315fbf3b2b67859aba84c8d9c352/chrono.ipynb)
 
 ou
 
