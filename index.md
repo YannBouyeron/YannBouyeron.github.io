@@ -110,7 +110,7 @@
 [Readme](https://ipfs.io/ipfs/QmZRZGBt47t1zUyEnF3ogedXLojmKsSxhQ94VgfLEkwsf1)
 
 
-[nbviewer chrono.ipynb](https://nbviewer.jupyter.org/gist/YannBouyeron/e4d0315fbf3b2b67859aba84c8d9c352/jupyter_netbook_chrono.ipynb)
+[jupyter netbook](https://nbviewer.jupyter.org/gist/YannBouyeron/e4d0315fbf3b2b67859aba84c8d9c352/jupyter_netbook_chrono.ipynb)
 
 
 ## SIG
