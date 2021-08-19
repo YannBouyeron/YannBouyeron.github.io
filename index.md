@@ -104,6 +104,11 @@
 
 ...
 
+## Datation absolue avec chrono.py
+
+[chrono.py](https://gist.github.com/YannBouyeron/e4d0315fbf3b2b67859aba84c8d9c352)
+
+
 ## SIG
 
 [Calculer et représenter le déplacement des plaques lithosphériques avec Pandas et Basemap](https://gist.github.com/YannBouyeron/9e9611edeb7e0f7e2c357c22fe659c54)
