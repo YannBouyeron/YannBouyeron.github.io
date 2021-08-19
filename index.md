@@ -106,7 +106,11 @@
 
 ## Datation absolue avec chrono.py
 
-[chrono.py](https://gist.github.com/YannBouyeron/e4d0315fbf3b2b67859aba84c8d9c352)
+[Github chrono.py](https://gist.github.com/YannBouyeron/e4d0315fbf3b2b67859aba84c8d9c352)
+
+ou 
+
+[nbviewer Chrono.ipynb](https://nbviewer.jupyter.org/gist/YannBouyeron/e4d0315fbf3b2b67859aba84c8d9c352/Chrono.ipynb)
 
 
 ## SIG
