@@ -100,6 +100,8 @@
 
 [Mise en page de plusieurs graphiques: réaliser un subplot](#subplot)
 
+[Utiliser matplotlib.plyplot avec Jupyter Notebook](https://gist.github.com/YannBouyeron/ef81071070c39d78ba37bc0fa2cb27f8)
+
 #### Avec Pandas
 
 ...
@@ -110,7 +112,7 @@
 [Readme](https://ipfs.io/ipfs/QmdeMDphv9UUFP8PHsReFqY4HJyJYfSPB6pr3qE7gmrk5T)
 
 
-[jupyter netbook](https://nbviewer.jupyter.org/gist/YannBouyeron/e4d0315fbf3b2b67859aba84c8d9c352/jupyter_netbook_chrono.ipynb)
+[jupyter notebook](https://nbviewer.jupyter.org/gist/YannBouyeron/e4d0315fbf3b2b67859aba84c8d9c352/jupyter_netbook_chrono.ipynb)
 
 
 ## SIG
