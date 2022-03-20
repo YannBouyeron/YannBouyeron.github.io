@@ -111,7 +111,7 @@
 [Chi2 d'indépendance](https://github.com/YannBouyeron/biostatistiques/blob/main/Chi2 d'indépendance.ipynb)
 
 
-[Chi2 d'homogénéité](https://github.com/YannBouyeron/biostatistiques/blob/main/Chi2 d'homogénéité.ipynb)
+[Chi2 d'homogénéité](https://github.com/YannBouyeron/biostatistiques/blob/main/Chi2%20d’homogénéité.ipynb)
 
 
 ## Datation absolue avec [chrono.py](https://gist.github.com/YannBouyeron/e4d0315fbf3b2b67859aba84c8d9c352)
